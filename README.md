@@ -1,5 +1,7 @@
 # Sentiment Analyzer 
 
+*frontend not complete 
+
 This is a simple web application built with Flask for performing sentiment analysis on text inputs using VADER (Valence Aware Dictionary and sEntiment Reasoner).
 
 ## Features
