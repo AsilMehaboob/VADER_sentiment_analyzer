@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form action="/analyze" method="post">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+    {% if text %}
+        <p>You entered: {{ text }}</p>
+        <p>Sentiment: {{ sentiment }}</p>
+        <p>Overall sentiment dictionary: {{ scores }}</p>
+        <p>Sentence was rated as {{ scores['neg']*100 }}% Negative</p>
+        <p>Sentence was rated as {{ scores['neu']*100 }}% Neutral</p>
+        <p>Sentence was rated as {{ scores['pos']*100 }}% Positive</p>
+    {% endif %}
+</body>
+</html>
