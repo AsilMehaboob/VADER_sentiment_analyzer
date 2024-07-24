@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Sentiment Analysis</h1>
-    <form action="/analyze" method="post">
-        <textarea name="text" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
-        <input type="submit" value="Analyze">
-    </form>
-    {% if text %}
-        <p>You entered: {{ text }}</p>
-        <p>Sentiment: {{ sentiment }}</p>
-        <p>Overall sentiment dictionary: {{ scores }}</p>
-        <p>Sentence was rated as {{ scores['neg']*100 }}% Negative</p>
-        <p>Sentence was rated as {{ scores['neu']*100 }}% Neutral</p>
-        <p>Sentence was rated as {{ scores['pos']*100 }}% Positive</p>
-    {% endif %}
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+        <h1 class="text-2xl font-bold mb-4">Sentiment Analysis</h1>
+        <form action="/analyze" method="post" class="space-y-4">
+            <textarea name="text" rows="4" cols="50" placeholder="Enter text here..." class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea><br>
+            <input type="submit" value="Analyze" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+        </form>
+        {% if text %}
+            <div class="mt-6">
+                <p class="text-gray-700">You entered: <span class="font-medium">{{ text }}</span></p>
+                <p class="text-gray-700">Sentiment: <span class="font-medium">{{ sentiment }}</span></p>
+                <p class="text-gray-700">Overall sentiment dictionary: <span class="font-medium">{{ scores }}</span></p>
+                <p class="text-gray-700">Sentence was rated as <span class="font-medium">{{ scores['neg']*100 }}% Negative</span></p>
+                <p class="text-gray-700">Sentence was rated as <span class="font-medium">{{ scores['neu']*100 }}% Neutral</span></p>
+                <p class="text-gray-700">Sentence was rated as <span class="font-medium">{{ scores['pos']*100 }}% Positive</span></p>
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
