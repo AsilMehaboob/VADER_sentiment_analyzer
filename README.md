@@ -12,4 +12,3 @@ This is a simple web application built with Flask for performing sentiment analy
 
 - **Flask**: Python web framework used for building the backend of the application.
 - **VADER Sentiment**: Python library for sentiment analysis.
-- **HTML/CSS/JavaScript**: Frontend technologies for building the user interface.
